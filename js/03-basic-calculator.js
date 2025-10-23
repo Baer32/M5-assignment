@@ -13,25 +13,26 @@
 
 calculate = function(x, y, operation) {
     let result;
-    if (operation === "+") {
-        result = x + y;
-    }
-    else if (operation === "-") {
-        result = x - y;
-    }
-    else if (operation === "*") {
-        result = x * y;
-    }
-    else if (operation === "/") {
-        if (y === 0) {
-            alert("Error: Division by zero is not allowed.");
-            throw new Error("Division by zero");
-        }
-        result = x / y;
-    }
-    else {
-        alert("Invalid operation! Please use +, -, *, or /.");
-        throw new Error("Invalid operation");
+    switch (operation) {
+        case "+":
+            result = x + y;
+            break;
+        case "-":
+            result = x - y;
+            break;
+        case "*":
+            result = x * y;
+            break;
+        case "/":
+            if (y === 0) {
+                alert("Error: Division by zero is not allowed.");
+                throw new Error("Division by zero");
+            }
+            result = x / y;
+            break;
+        default:
+            alert("Invalid operation! Please use +, -, *, or /.");
+            throw new Error("Invalid operation");
     }
     return result;
 }
